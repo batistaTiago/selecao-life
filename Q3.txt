@@ -1,0 +1,3 @@
+a diferença entre LEFT JOINs e INNER JOINs é que um INNER JOIN apenas trará resultados caso a tabela relacionada contenha registros que satisfaçam 
+a cláusula ON definida no JOIN, enquanto um LEFT JOIN vai trazer todos os registros da tabela "de origem", atribuindo os resultados que satisfazem 
+a cláusula ON definida no JOIN e NULL nos registros que não o satisfazem

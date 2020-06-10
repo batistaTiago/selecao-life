@@ -1,0 +1,57 @@
+O Eloquent é o ORM utilizado pelo Laravel, ele auxilia o desenvolvimento de operações com bancos de dados e, principalmente, na definição e no acesso de relacionamentos entre diferentes Models
+
+Exemplo de recuperação de dados no banco para os seguintes models
+
+Produto, que tem uma Categoria
+Produto, que tem um Vendedor
+Vendedor tem muitas lojas
+
+1) Query "Crua"
+
+SELECT 
+    <campos_de_escolha> 
+FROM 
+    produtos 
+    INNER JOIN vendedores ON produto.vendedor_id = vendedor.id 
+    INNER JOIN lojas ON lojas.vendedor_id = vendedor.id
+    INNER JOIN categorias ON produtos.categoria_id = categorias.id
+WHERE
+    categoria.id = 2;
+
+2) Usando Query Builder
+
+Produto::select(
+    'campos de escolha...'
+)
+    ->join('vendedores', 'produto.vendedor_id', 'vendedor.id)
+    ->join('lojas', 'lojas.vendedor_id', 'vendedor.id')
+    ->join('categorias', 'produto.categoria_id', 'categoria_id')
+    ->where('categoria.id', 2)
+    ->get();
+
+
+3) Com eloquent
+
+    Produto::with(['vendedor', 'categoria'])->where('categoria.id', 2)->get();
+
+
+3.1) Ainda é possível usar relacionamentos indiretos:
+
+    Produto::with(['vendedor.lojas', 'categoria'])->where('categoria.id', 2)->get();
+
+
+OBS1: para o relacionamento funcionar, devemos adicionar os relacionamentos aos models, como exemplo, vou deixar o de produto com categoria
+Em app/Models/Produto.php
+
+public function categoria() {
+    return $this->belongsTo(Categoria::class);
+}
+
+Em app/Models/Categoria.php
+
+public function produto() {
+    return $this->hasMany(Produto::class);
+}
+
+
+OBS2: a utilização da função "with" não é obrigatória, mas caso seja utilizado um laço é recomendada fazer o eager-loading da relação e assim evitar o problema de "N+1 queries"

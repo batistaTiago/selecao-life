@@ -1,0 +1,44 @@
+O Blade é o processador de views do Framework Laravel, ele pode ser utilizado para diversas finalidades, mas a principal é a renderização dinâmica de elementos HTML, fazendo coisas como:
+
+
+1) Inclusão de variáveis no corpo da página
+
+<div>Bem vindo {{ $nome_usuario }}</div>
+
+
+
+2) renderização condicional
+
+@if (isset($nome_usuario))
+  <div>Bem vindo {{ $nome_usuario }}</div>
+@else
+  {{-- renderização de um form de login, por exemplo --}}
+@endif
+
+
+3) renderização em laço
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($produtos as $_idx => $produto)
+            <tr>
+                <th scope="row">{{ $_idx + 1 }}</th>
+                <td>{{ $produto->nome }}</td>
+                <td>{{ $produto->categoria->nome }}</td>
+                <td>{{ $produto->preco }}</td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+
+
+
+OBS: nesse terceiro exemplo assume-se que as entidades produto e categoria têm uma relação de 1 para 1

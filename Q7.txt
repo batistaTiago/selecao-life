@@ -1,0 +1,18 @@
+// assumindo que o projeto já foi clonado e seu repositório remoto associado foi chamado de "origin"
+
+git checkout dev
+git pull origin dev
+git checkout -b "card#1000"
+
+// escrita do código da demanda
+
+git add .
+git commit -m "implementação da demanda card#1000"
+git push origin card#1000
+
+git checkout teste
+git merge card#1000
+
+// resolução de eventuais conflitos
+
+git push origin teste

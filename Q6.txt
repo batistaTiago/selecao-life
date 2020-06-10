@@ -1,0 +1,23 @@
+Criação de Model
+
+php artisan make:model NomeDoModel
+
+obs: eu costumo colocar os meus models dentro da pasta model e já criar uma migration para eles, então, em geral utilizo
+
+php artisan make:model Models/NomeDoModel -m
+
+
+------------------------------------------------------
+
+
+Criação de Controller
+
+php artisan make:controller NomeDoController
+
+
+
+------------------------------------------------------
+
+Criação de migration
+
+php artisan make:migration NomeDaMigration

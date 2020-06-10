@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "0ad1844f-5d86-5201-a045-7901088c624f",
+		"name": "SELECAO FILE - CRUD PESSOA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get pessoa by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/pessoa/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pessoa",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Pessoa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nome",
+							"value": "Tiago",
+							"type": "text"
+						},
+						{
+							"key": "cpf",
+							"value": "09346614480",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ekyidag@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "data_nasc",
+							"value": "1991-11-14",
+							"type": "text"
+						},
+						{
+							"key": "nacionalidade",
+							"value": "br",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pessoa",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nome",
+							"value": "Tiago",
+							"type": "text"
+						},
+						{
+							"key": "cpf",
+							"value": "09346614480",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ekyidag@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "data_nasc",
+							"value": "1991-11-10",
+							"type": "text"
+						},
+						{
+							"key": "nacionalidade",
+							"value": "br",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/pessoa/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pessoa",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pessoa",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nome",
+							"value": "Tiago",
+							"type": "text"
+						},
+						{
+							"key": "cpf",
+							"value": "09346614480",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "ekyidag@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "data_nasc",
+							"value": "14/11/1991",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "nacionalidade",
+							"value": "br",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/pessoa/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pessoa",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
